@@ -8,12 +8,12 @@ const provider = new ethers.providers.JsonRpcProvider(); //connect to ganache on
 const wallet = new ethers.Wallet(privateKey, provider)
 
 module.exports = async function(callback) {
-	try{
+  try{
     const contract = await MintDai.deployed()
     const DAI = new ethers.Contract(legos.erc20.dai.address, legos.erc20.dai.abi, wallet);
-	
+    
     console.log('Balance ETH b4:', ethers.utils.formatEther(await wallet.getBalance()))
-		console.log('Balance DAI b4:', ethers.utils.formatEther(await DAI.balanceOf(wallet.address)))
+    console.log('Balance DAI b4:', ethers.utils.formatEther(await DAI.balanceOf(wallet.address)))
 
     await contract.myCustomOpenVaultFunction(
       legos.maker.dssCdpManager.address,
@@ -25,8 +25,8 @@ module.exports = async function(callback) {
     )
 
     console.log('Balance ETH after:', ethers.utils.formatEther(await wallet.getBalance()))
-		console.log('Balance DAI after:', ethers.utils.formatEther(await DAI.balanceOf(wallet.address)))
-	} catch (e) {
-		console.log(e)
-	} callback()
+    console.log('Balance DAI after:', ethers.utils.formatEther(await DAI.balanceOf(wallet.address)))
+  } catch (e) {
+    console.log(e)
+  } callback()
 }
