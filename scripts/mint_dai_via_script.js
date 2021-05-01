@@ -48,12 +48,13 @@ module.exports = async function(callback) {
     console.log('Balance DAI b4:', ethers.utils.formatEther(await DAI.balanceOf(wallet.address)))
   
     // Open vault through proxy
+    console.log('\nMinting DAI...')
     await proxyContract.execute(legos.maker.dssProxyActions.address, _data, {
       gasLimit: 2500000,
       value: ethers.utils.parseEther("3"),
     });
 
-    console.log('Balance ETH after:', ethers.utils.formatEther(await wallet.getBalance()))
+    console.log('\nBalance ETH after:', ethers.utils.formatEther(await wallet.getBalance()))
     console.log('Balance DAI after:', ethers.utils.formatEther(await DAI.balanceOf(wallet.address)))
   } catch (e) {
     console.log(e)

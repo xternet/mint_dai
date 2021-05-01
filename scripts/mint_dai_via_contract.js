@@ -3,7 +3,7 @@ const { legos } = require("@studydefi/money-legos");
 const { ethers, Wallet, Contract } = require("ethers");
 
 //Instructions in README
-const privateKey = '0x637950a9c80a16fb645c44c0c41b9359a5e34dd3e47bb66da5c052034e8883a8' //paste Private Key of 1st ganache-cli account
+const privateKey = '0x0' //paste Private Key of 1st ganache-cli account
 const provider = new ethers.providers.JsonRpcProvider(); //connect to ganache on port 8545
 const wallet = new ethers.Wallet(privateKey, provider)
 
@@ -15,6 +15,7 @@ module.exports = async function(callback) {
     console.log('Balance ETH b4:', ethers.utils.formatEther(await wallet.getBalance()))
     console.log('Balance DAI b4:', ethers.utils.formatEther(await DAI.balanceOf(wallet.address)))
 
+    console.log('\nMinting DAI...')
     await contract.myCustomOpenVaultFunction(
       legos.maker.dssCdpManager.address,
       legos.maker.jug.address,
@@ -24,7 +25,7 @@ module.exports = async function(callback) {
       { gasLimit: 4000000, value: ethers.utils.parseEther("3") },
     )
 
-    console.log('Balance ETH after:', ethers.utils.formatEther(await wallet.getBalance()))
+    console.log('\nBalance ETH after:', ethers.utils.formatEther(await wallet.getBalance()))
     console.log('Balance DAI after:', ethers.utils.formatEther(await DAI.balanceOf(wallet.address)))
   } catch (e) {
     console.log(e)
