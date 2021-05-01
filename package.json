@@ -1,0 +1,11 @@
+{
+  "name": "mint_dai",
+  "version": "1.0.0",
+  "description": "Minting DAI via backend",
+  "keywords": [eth, dai, dapp, mint],
+  "author": "github.com/xternet",
+  "dependencies": {
+    "@studydefi/money-legos": "2.4.2",
+    "ethers": "4.0.46"
+  }
+}
