@@ -12,7 +12,7 @@
    </br>`ganache-cli -f <https://YOUR_ETH_PROVIDER>`
    </br>
 
-## 1st method, via contract:
+## 1️⃣  method, via contract:
 
 0. **Paste Private Key of 1st ganache-cli account into privateKey variable in mint_dai_via_contract.js**
 1. **Migrate MintDai.sol**
@@ -22,7 +22,7 @@
 
 </br>
 
-## 2nd method, via script:
+## 2️⃣  method, via script:
 
 0. **Paste Private Key of 1st ganache-cli account into privateKey variable in mint_dai_via_script.js**
 1. **Execute script**
