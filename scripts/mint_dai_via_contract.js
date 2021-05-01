@@ -21,8 +21,8 @@ module.exports = async function(callback) {
       legos.maker.jug.address,
       legos.maker.ethAJoin.address,
       legos.maker.daiJoin.address,
-      ethers.utils.parseUnits("5100", legos.erc20.dai.decimals), //5.1k DAI; Amount have to be high enough, cuz fees!
-      { gasLimit: 4000000, value: ethers.utils.parseEther("3") },
+      ethers.utils.parseUnits("10000", legos.erc20.dai.decimals), //10k DAI; Amount have to be high enough, cuz fees!
+      { gasLimit: 2500000, value: ethers.utils.parseEther("10") },
     )
 
     console.log('\nBalance ETH after:', ethers.utils.formatEther(await wallet.getBalance()))
