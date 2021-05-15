@@ -26,4 +26,4 @@
 
 0. **Paste Private Key of 1st ganache-cli account into privateKey variable in mint_dai_via_script.js**
 1. **Execute script**
-   </br>`truffle exec scripts/mint_dai_via_contract.js`
+   </br>`truffle exec scripts/mint_dai_via_script.js`
